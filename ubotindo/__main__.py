@@ -1,5 +1,5 @@
 # UserindoBot
-# Copyright (C) 2020  UserindoBot Team, <https://github.com/MoveAngel/UserIndoBot.git>
+# Copyright (C) 2020  UserindoBot Team, <https://github.com/userbotindo/UserIndoBot.git>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ from typing import Optional
 
 from telegram import Message, Chat, User
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.error import Unauthorized
 from telegram.ext import (
     CommandHandler,
     Filters,
@@ -55,7 +56,6 @@ from ubotindo import (
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from ubotindo.modules import ALL_MODULES
-from ubotindo.modules.purge import client
 from ubotindo.modules.helper_funcs.chat_status import is_user_admin
 from ubotindo.modules.helper_funcs.filters import CustomFilters
 from ubotindo.modules.helper_funcs.misc import paginate_modules
@@ -63,18 +63,18 @@ from ubotindo.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = f"""
-Hey KIMAKS! my name is *{dispatcher.bot.first_name}*.
-GUA HADIR UNTUK MELINDUNGI KAUM WANITA DARI COWO SANGE ONLINE? use /help
+Hey there! my name is *{dispatcher.bot.first_name}*.
+Any questions on how to use me? use /help
 
-Join Our [CTH](https://t.me/caritemanhidop) UNTUK REPORT COWO SANGE ONLINE🙂
+Join Our [Group](https://t.me/userbotindo) If You wanna Report Issue 🙂
 
-Tambahin gua ke grup elu dan kasih akses admin!
-SIAP MEMBASMI COWO SANGE ☠️:
+I'm here to make your group management fun and easy!
+I have lots of handy features ☺️ such as :
 
-• follow my instagram.         • @hlidofficial
-• Media Partners.   • CARI TEMAN HIDUP
+• flood control.         • Note'S keeping system.
+• Warning System.   • Predetermined Filters.
 
-*Managed With ❤️ By :* [LORD MEGAZODD](https://t.me/mixiologist)
+*Managed With ❤️ By :* [UserbotIndo Team](https://t.me/userbotindo)
 
 Wanna Add me to your Group? Just click the button below!
 """
@@ -85,7 +85,7 @@ buttons = [
             text="Add to Group 👥", url="t.me/userbotindobot?startgroup=true"
         ),
         InlineKeyboardButton(
-            text="Gban Logs 🚫", url="https://t.me/megazordlogs"
+            text="Gban Logs 🚫", url="https://t.me/UserIndoBotBannedLog"
         ),
     ]
 ]
@@ -98,7 +98,7 @@ buttons += [
             url=f"t.me/{dispatcher.bot.username}?start=help",
         ),
         InlineKeyboardButton(
-            text="Support Group 🐨", url="https://t.me/caritemanhidop"
+            text="Support Group 🎗️", url="https://t.me/userbotindo"
         ),
     ]
 ]
@@ -275,7 +275,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://i.ibb.co/p1x42G5/IMG-20201127-160157-050.jpg",
+                "https://i.ibb.co/zJdLsyg/Userindobot.png",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
@@ -324,9 +324,17 @@ def error_handler(update, context):
             .get("result")
             .get("key")
         )
-        url = f"https://nekobin.com/{key}.py"
         markup = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Nekobin", url=url)]]
+            [
+                [
+                    InlineKeyboardButton(
+                        "Nekobin Url", url=f"https://nekobin.com/{key}"
+                    ),
+                    InlineKeyboardButton(
+                        "Nekobin Raw", url=f"https://nekobin.com/raw/{key}"
+                    ),
+                ]
+            ]
         )
 
     # Finally, send the message
@@ -707,37 +715,42 @@ def is_chat_allowed(update, context):
     if len(WHITELIST_CHATS) != 0:
         chat_id = update.effective_message.chat_id
         if chat_id not in WHITELIST_CHATS:
-            context.bot.send_message(
-                chat_id=update.message.chat_id,
-                text="Unallowed chat! Leaving...",
-            )
             try:
+                context.bot.send_message(
+                    chat_id=chat_id,
+                    text="This group is Blacklisted! Leaving...",
+                )
                 context.bot.leave_chat(chat_id)
+            except Unauthorized:
+                pass
             finally:
                 raise DispatcherHandlerStop
     if len(BLACKLIST_CHATS) != 0:
         chat_id = update.effective_message.chat_id
         if chat_id in BLACKLIST_CHATS:
-            context.bot.send_message(
-                chat_id=update.message.chat_id,
-                text="Unallowed chat! Leaving...",
-            )
             try:
+                context.bot.send_message(
+                    chat_id=chat_id,
+                    text="This group is Blacklisted! Leaving...",
+                )
                 context.bot.leave_chat(chat_id)
+            except Unauthorized:
+                pass
             finally:
                 raise DispatcherHandlerStop
     if len(WHITELIST_CHATS) != 0 and len(BLACKLIST_CHATS) != 0:
         chat_id = update.effective_message.chat_id
         if chat_id in BLACKLIST_CHATS:
-            context.bot.send_message(
-                chat_id=update.message.chat_id, text="Unallowed chat, leaving"
-            )
             try:
+                context.bot.send_message(
+                    chat_id=chat_id,
+                    text="This group is Blacklisted! Leaving..."
+                )
                 context.bot.leave_chat(chat_id)
+            except Unauthorized:
+                pass
             finally:
                 raise DispatcherHandlerStop
-    else:
-        pass
 
 
 def main():
@@ -765,7 +778,7 @@ def main():
     migrate_handler = MessageHandler(
         Filters.status_update.migrate, migrate_chats
     )
-    is_chat_allowed_handler = MessageHandler(Filters.group, is_chat_allowed)
+    is_chat_allowed_handler = MessageHandler(Filters.chat_type.groups, is_chat_allowed)
 
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
@@ -788,20 +801,18 @@ def main():
             )
         else:
             updater.bot.set_webhook(url=URL + TOKEN)
-            client.run_until_disconnected()
 
     else:
         LOGGER.info("Using long polling.")
-        updater.start_polling(timeout=15, read_latency=4)
-        updater.bot.send_message(
-            chat_id=MESSAGE_DUMP, text="Ubotindo Started..."
-        )
-        client.run_until_disconnected()
+        updater.start_polling(timeout=15, read_latency=5, clean=True)
+        if MESSAGE_DUMP:
+            updater.bot.send_message(
+                chat_id=MESSAGE_DUMP, text="System Started..."
+            )
 
     updater.idle()
 
 
 if __name__ == "__main__":
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
-    client.start(bot_token=TOKEN)
     main()
