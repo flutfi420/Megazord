@@ -63,18 +63,18 @@ from ubotindo.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = f"""
-Hey there! my name is *{dispatcher.bot.first_name}*.
-Any questions on how to use me? use /help
+Hey KIMAKS! my name is *{dispatcher.bot.first_name}*.
+GUA HADIR UNTUK MELINDUNGI KAUM WANITA DARI COWO SANGE ONLINE? use /help
 
-Join Our [Group](https://t.me/userbotindo) If You wanna Report Issue 🙂
+Join Our [CTH](https://t.me/caritemanhidop) UNTUK REPORT COWO SANGE ONLINE🙂
 
-I'm here to make your group management fun and easy!
-I have lots of handy features ☺️ such as :
+Tambahin gua ke grup elu dan kasih akses admin!
+SIAP MEMBASMI COWO SANGE ☠️:
 
-• flood control.         • Note'S keeping system.
-• Warning System.   • Predetermined Filters.
+• follow my instagram.         • @hlidofficial
+• Media Partners.   • CARI TEMAN HIDUP
 
-*Managed With ❤️ By :* [UserbotIndo Team](https://t.me/userbotindo)
+*Managed With ❤️ By :* [LORD MEGAZODD](https://t.me/mixiologist)
 
 Wanna Add me to your Group? Just click the button below!
 """
@@ -85,11 +85,23 @@ buttons = [
             text="Add to Group 👥", url="t.me/userbotindobot?startgroup=true"
         ),
         InlineKeyboardButton(
-            text="Gban Logs 🚫", url="https://t.me/UserIndoBotBannedLog"
+            text="Gban Logs 🚫", url="https://t.me/megazordlogs"
         ),
     ]
 ]
 
+
+buttons += [
+    [
+        InlineKeyboardButton(
+            text="Help & Commands ❔",
+            url=f"t.me/{dispatcher.bot.username}?start=help",
+        ),
+        InlineKeyboardButton(
+            text="Support Group 🐨", url="https://t.me/caritemanhidop"
+        ),
+    ]
+]
 
 buttons += [
     [
