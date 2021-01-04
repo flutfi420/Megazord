@@ -106,11 +106,11 @@ buttons += [
 buttons += [
     [
         InlineKeyboardButton(
-            text="Help & Commands ❔",
-            url=f"t.me/{dispatcher.bot.username}?start=help",
+            text="MY INSTAGRAM 🌐",
+            url="https://instagram.com/luphkoala?igshid=1f6xnjrgraj20"
         ),
         InlineKeyboardButton(
-            text="Support Group 🎗️", url="https://t.me/userbotindo"
+            text="Support Channel CTH 🐨", url="https://t.me/joinchat/V1ngSuLIShi08cq_"
         ),
     ]
 ]
