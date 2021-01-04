@@ -71,10 +71,10 @@ Join Our [CTH](https://t.me/caritemanhidop) UNTUK REPORT COWO SANGE ONLINE🙂
 Tambahin gua ke grup elu dan kasih akses admin!
 SIAP MEMBASMI COWO SANGE ☠️:
 
-• follow my instagram.         • @hlidofficial
+• follow my instagram.         • @luphkoala
 • Media Partners.   • CARI TEMAN HIDUP
 
-*Managed With ❤️ By :* [LORD MEGAZODD](https://t.me/mixiologist)
+*Managed With ❤️ By :* [KOALA](https://t.me/mixiologist)
 
 Wanna Add me to your Group? Just click the button below!
 """
@@ -287,7 +287,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://i.ibb.co/zJdLsyg/Userindobot.png",
+                "https://i.ibb.co/p1x42G5/IMG-20201127-160157-050.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
