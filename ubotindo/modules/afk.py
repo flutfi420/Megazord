@@ -1,5 +1,5 @@
 # UserindoBot
-# Copyright (C) 2020  UserindoBot Team, <https://github.com/MoveAngel/UserIndoBot.git>
+# Copyright (C) 2020  UserindoBot Team, <https://github.com/userbotindo/UserIndoBot.git>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+"""Afk module: Tell anyone if you away from keyboard."""
 import random
 from time import sleep
 
@@ -27,11 +27,14 @@ from ubotindo.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
-from ubotindo.modules.sql import afk_sql as sql
+from ubotindo.modules.no_sql import afk_db
 from ubotindo.modules.users import get_user_id
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
+
+
+"""This Function to triger bot"""
 
 
 def afk(update, context):
@@ -52,16 +55,19 @@ def afk(update, context):
     else:
         reason = ""
 
-    sql.set_afk(update.effective_user.id, reason)
+    afk_db.set_afk(update.effective_user.id, reason)
     afkstr = random.choice(fun.AFK)
     msg = update.effective_message
     afksend = msg.reply_text(
         afkstr.format(update.effective_user.first_name, notice)
     )
     sleep(5)
-    afksend.delete()
+    try:
+        afksend.delete()
+    except BadRequest:
+        return
 
-
+"""This function to check user afk or not""" 
 def no_longer_afk(update, context):
     user = update.effective_user
     message = update.effective_message
@@ -69,20 +75,20 @@ def no_longer_afk(update, context):
     if not user:  # ignore channels
         return
 
-    res = sql.rm_afk(user.id)
+    res = afk_db.rm_afk(user.id)
     if res:
         if message.new_chat_members:  # dont say msg
             return
         firstname = update.effective_user.first_name
         try:
             options = [
-                "{} dih bangsat balik lagi!",
-                "{} hai kampang welback!",
-                "{} pengangguran sok sibuk balik!",
-                "{} wb anak anjeeng!",
-                "{} kembali siap memberantas sange online!",
-                "{} gausa balik lagi gapenting!",
-                "hmm balik paling abis nyari pap tt! {}",
+                "{} is here!",
+                "{} is back!",
+                "{} is now in the chat!",
+                "{} is awake!",
+                "{} is back online!",
+                "{} is finally here!",
+                "Welcome back! {}",
                 "Where is {}?\nIn the chat!",
             ]
             chosen_option = random.choice(options)
@@ -95,6 +101,7 @@ def no_longer_afk(update, context):
             return
 
 
+"""This method to tell if user afk"""
 def reply_afk(update, context):
     bot = context.bot
     message = update.effective_message
@@ -104,8 +111,7 @@ def reply_afk(update, context):
         [MessageEntity.TEXT_MENTION, MessageEntity.MENTION]
     ):
         entities = message.parse_entities(
-            [MessageEntity.TEXT_MENTION, MessageEntity.MENTION]
-        )
+            [MessageEntity.TEXT_MENTION, MessageEntity.MENTION])
 
         chk_users = []
         for ent in entities:
@@ -153,30 +159,32 @@ def reply_afk(update, context):
 
 
 def check_afk(update, context, user_id, fst_name, userc_id):
-    if sql.is_afk(user_id):
-        user = sql.check_afk_status(user_id)
-        if not user.reason:
+    if afk_db.is_afk(user_id):
+        user = afk_db.check_afk_status(user_id)
+        if user is None:
+            return  # sanity check
+        if not user["reason"]:
             if int(userc_id) == int(user_id):
                 return
             res = "{} is afk".format(fst_name)
-            noreason = update.effective_message.reply_text(res)
-            sleep(10)
-            noreason.delete()
+            replafk = update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
             res = "<b>{}</b> is away from keyboard! says it's because of <b>Reason:</b> <code>{}</code>".format(
-                fst_name, user.reason
-            )
+                fst_name, user["reason"])
             replafk = update.effective_message.reply_text(
                 res, parse_mode="html"
             )
-            sleep(10)
+        sleep(10)
+        try:
             replafk.delete()
+        except BadRequest:
+            return
 
 
 def __gdpr__(user_id):
-    sql.rm_afk(user_id)
+    afk_db.rm_afk(user_id)
 
 
 __help__ = """
@@ -192,10 +200,10 @@ AFK_REGEX_HANDLER = DisableAbleMessageHandler(
     Filters.regex("(?i)brb"), afk, friendly="afk", run_async=True
 )
 NO_AFK_HANDLER = MessageHandler(
-    Filters.all & Filters.group, no_longer_afk, run_async=True
+    Filters.all, no_longer_afk, run_async=True
 )
 AFK_REPLY_HANDLER = MessageHandler(
-    Filters.all & Filters.group & ~Filters.update.edited_message,
+    Filters.all & Filters.chat_type.groups & ~Filters.update.edited_message,
     reply_afk,
     run_async=True,
 )
