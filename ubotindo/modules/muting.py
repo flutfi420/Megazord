@@ -80,7 +80,7 @@ def mute(update, context):
                 user_id,
                 permissions=ChatPermissions(can_send_messages=False),
             )
-            message.reply_text("👍🏻 muted! 🤐")
+            message.reply_text("DIAM LU KAMPANG 😤")
             return (
                 "<b>{}:</b>"
                 "\n#MUTE"
@@ -146,7 +146,7 @@ def unmute(update, context):
                     can_add_web_page_previews=True,
                 ),
             )
-            message.reply_text("Yep! this user can start talking again...")
+            message.reply_text("lain kali gausah sok keras KONTOL...")
             return (
                 "<b>{}:</b>"
                 "\n#UNMUTE"
@@ -248,7 +248,7 @@ def temp_mute(update, context):
                 until_date=mutetime,
                 permissions=ChatPermissions(can_send_messages=False),
             )
-            message.reply_text("shut up! 🤐 Taped for {}!".format(time_val))
+            message.reply_text("diem bentar ya asu {}!".format(time_val))
             return log
         else:
             message.reply_text("This user is already muted.")
@@ -257,7 +257,7 @@ def temp_mute(update, context):
         if excp.message == "Reply message not found":
             # Do not reply
             message.reply_text(
-                "shut up! 🤐 Taped for {}!".format(time_val), quote=False
+                "diem bentar ya asu {}!".format(time_val), quote=False
             )
             return log
         else:
