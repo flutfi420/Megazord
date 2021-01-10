@@ -139,7 +139,7 @@ def punch(update, context):
 
 @typing_action
 def police(update, context):
-    message = update.effective_message.reply_text("Wuanjayy...")
+    message = update.effective_message.reply_text("MALING MANA MALING...")
     for i in fun.POLICE:
         message.edit_text(i)
         time.sleep(0.5)
@@ -178,7 +178,7 @@ def hug(update, context):
 
     # if no target found, bot targets the sender
     else:
-        user1 = "Awwh! [{}](tg://user?id={})".format(
+        user1 = "Gay tolol! [{}](tg://user?id={})".format(
             context.bot.first_name, context.bot.id
         )
         user2 = curr_user
