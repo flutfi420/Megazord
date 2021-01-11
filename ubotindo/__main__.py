@@ -287,7 +287,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://i.ibb.co/p1x42G5/IMG-20201127-160157-050.jpg",
+                "https://i.ibb.co/SXZ7vWD/d4yu0lg-acc41bd9-3f52-4a21-ad97-027fd2115f2c.gif",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
