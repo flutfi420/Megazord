@@ -17,7 +17,6 @@
 
 import threading
 
-from gban.db import Column, UnicodeText, Integer, String, Boolean
 
 from ubotindo.modules.no_sql import BASE, SESSION
 
