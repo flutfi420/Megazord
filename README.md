@@ -66,8 +66,6 @@ Alternatively, [find me on telegram](https://t.me/mixiologist)! (Keep all suppor
 
 To deploy me on heroku, use below button:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Camel07/Megazord)
-
 
 An example `config.env` file could be:
 
