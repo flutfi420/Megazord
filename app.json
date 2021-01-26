@@ -81,16 +81,9 @@
       "value": "DB ELU"
      
     }
-     "TL_HASH": {
-      "description": "Find my.telegram.org",
-      "value": "",
-      
-    },
-    "TL_APP_ID": {
-      "description": "Find my.telegram.org",
-      "value": ""
      
-    }
+     
+   
 
   },
   "addons": [
