@@ -62,6 +62,13 @@ your other settings.
 It is recommended to import sample_config and extend the Config class, as this will ensure your config contains all
 defaults set in the sample_config, hence making it easier to upgrade.
 
+Alternatively, [find me on telegram](https://t.me/mixiologist)! (Keep all support questions in the support chat, where more people can help you.)
+
+To deploy me on heroku, use below button:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Camel07/Megazord)
+
+
 An example `config.env` file could be:
 
 ```python
