@@ -66,7 +66,7 @@ PM_START_TEXT = f"""
 Hey ANAK ASU! my name is *{dispatcher.bot.first_name}*.
 NGAPAIN? MAU GUA PATAHIN LEHER LU? PRESS /help BUAT LIAT FITUR GUA
 
-Join Our [•𝐏𝐄𝐑𝐕𝐄𝐑𝐓𝐄𝐃 𝐇𝐔𝐌𝐀𝐍•](https://t.me/CariTemen_Random) BAGI LU YANG DOYAN BACOT
+Join Our [•𝐏𝐄𝐑𝐕𝐄𝐑𝐓𝐄𝐃 𝐇𝐔𝐌𝐀𝐍•](https://t.me/CariTemen_Random) BAGI LU YANG MAU PARMING, TAPI JANGAN SANGEAN YA GOBLOK! GA KEREN LU SANGE DI TELE
 
 Tambahin gua ke grup elu dan kasih akses admin!
 TAPI IZIN DULU KONTOLLL. ☠️:
