@@ -63,18 +63,18 @@ from ubotindo.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = f"""
-Hey ANAK ASU! my name is *{dispatcher.bot.first_name}*.
-NGAPAIN? MAU GUA PATAHIN LEHER LU? PRESS /help BUAT LIAT FITUR GUA
+Hey KIMAKS! my name is *{dispatcher.bot.first_name}*.
+GUA HADIR UNTUK MELINDUNGI KAUM WANITA DARI COWO SANGE ONLINE? use /help
 
-Join Our [•𝐏𝐄𝐑𝐕𝐄𝐑𝐓𝐄𝐃 𝐇𝐔𝐌𝐀𝐍•](https://t.me/CariTemen_Random) BAGI LU YANG MAU PARMING, TAPI JANGAN SANGEAN YA GOBLOK! GA KEREN LU SANGE DI TELE
+Join Our [CTH](https://t.me/caritemanhidop) UNTUK REPORT COWO SANGE ONLINE🙂
 
 Tambahin gua ke grup elu dan kasih akses admin!
-TAPI IZIN DULU KONTOLLL. ☠️:
+SIAP MEMBASMI COWO SANGE ☠️:
 
-• follow my instagram.         • @luphkoala
+• follow my instagram.         • @manusiarakitann
 • Media Partners.   • CARI TEMAN HIDUP
 
-*Managed With 🐨 By :* [KOALA](https://t.me/mixiologist)
+*Managed With ❤️ By :* [KOALA](https://t.me/manusiarakitann)
 
 Wanna Add me to your Group? Just click the button below!
 """
@@ -85,7 +85,7 @@ buttons = [
             text="Add to Group 👥", url="t.me/userbotindobot?startgroup=true"
         ),
         InlineKeyboardButton(
-            text="Gban Logs 🚫", url="https://t.me/joinchat/RkGxM9pYWAjMCgtu"
+            text="Gban Logs 🚫", url="https://t.me/megazordlogs"
         ),
     ]
 ]
@@ -98,7 +98,7 @@ buttons += [
             url=f"t.me/{dispatcher.bot.username}?start=help",
         ),
         InlineKeyboardButton(
-            text="Support Group ⚡", url="https://t.me/CariTemen_Random"
+            text="Support Group 🐨", url="https://t.me/caritemanhidop"
         ),
     ]
 ]
@@ -107,10 +107,10 @@ buttons += [
     [
         InlineKeyboardButton(
             text="MY INSTAGRAM 🌐",
-            url="https://instagram.com/luphkoala?igshid=1f6xnjrgraj20"
+            url="https://instagram.com/manusiarakitann?igshid=1f6xnjrgraj20"
         ),
         InlineKeyboardButton(
-            text="Support Channel 👑", url="https://t.me/PevertedHuman_Channel"
+            text="Support Channel CTH 🐨", url="https://t.me/joinchat/V1ngSuLIShi08cq_"
         ),
     ]
 ]
@@ -287,7 +287,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/d06345d05922938ee3224.jpg",
+                "https://i.ibb.co/9G8F7p7/images-1.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
