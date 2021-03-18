@@ -63,19 +63,20 @@ from ubotindo.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = f"""
-Hey KIMAKS! my name is *{dispatcher.bot.first_name}*.
-GUA HADIR UNTUK MELINDUNGI KAUM WANITA DARI COWO SANGE ONLINE? use /help
+Hey PEPEK! Nama gua *{dispatcher.bot.first_name}*.
+GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO. use /help
 
-Join Our [CTH](https://t.me/caritemanhidop) UNTUK REPORT COWO SANGE ONLINE🙂
+Join Our [GROUP](https://t.me/gcsampah) UNTUK REPORT JAMET AMA BANG JAGO🙂
 
 Tambahin gua ke grup elu dan kasih akses admin!
-SIAP MEMBASMI COWO SANGE ☠️:
+SIAP MEMBASMI JAMET ☠️:
 
-• follow my instagram.         • @manusiarakitann
+• follow my instagram.         • @lutfifirmansyahh
+• follow instagram master.         • @manusiarakitann
 • Media Partners.   • CARI TEMAN HIDUP
 
-*Managed With ❤️ By :* [KOALA](https://t.me/manusiarakitann)
-
+*BIG THANKS TO MY MASTER :* [KOALA](https://t.me/manusiarakitann)
+*MANAGED BY:* [UPI](https://t.me/yangtagtolol)
 Wanna Add me to your Group? Just click the button below!
 """
 
@@ -85,7 +86,7 @@ buttons = [
             text="Add to Group 👥", url="t.me/userbotindobot?startgroup=true"
         ),
         InlineKeyboardButton(
-            text="Gban Logs 🚫", url="https://t.me/megazordlogs"
+            text="Gban Logs 🚫", url="https://t.me/dregsboty"
         ),
     ]
 ]
@@ -98,7 +99,10 @@ buttons += [
             url=f"t.me/{dispatcher.bot.username}?start=help",
         ),
         InlineKeyboardButton(
-            text="Support Group 🐨", url="https://t.me/caritemanhidop"
+            text="Support Group MASTER 🐨", url="https://t.me/caritemanhidop"
+        ),
+        InlineKeyboardButton(
+            text="GROUP ASIK", url="https://t.me/gcsampah"
         ),
     ]
 ]
@@ -107,10 +111,10 @@ buttons += [
     [
         InlineKeyboardButton(
             text="MY INSTAGRAM 🌐",
-            url="https://instagram.com/manusiarakitann?igshid=1f6xnjrgraj20"
+            url="https://www.instagram.com/lutfifirmansyahh/"
         ),
         InlineKeyboardButton(
-            text="Support Channel CTH 🐨", url="https://t.me/joinchat/V1ngSuLIShi08cq_"
+            text="GROUPS PARTNERS", url="https://t.me/pemudapemuditersesatt"
         ),
     ]
 ]
