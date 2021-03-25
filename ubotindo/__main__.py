@@ -64,9 +64,10 @@ from ubotindo.modules.helper_funcs.alternate import typing_action
 
 PM_START_TEXT = f"""
 Hey PEPEK! Nama gua *{dispatcher.bot.first_name}*.
+GUA MANUSIA ROBOT YANG DIBUAT OLEH [UPI](https://t.me/yangtagtolol)
 GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO. use /help
 
-Join Our [GROUP](https://t.me/etherealreborn) UNTUK MEREPORT JAMET AMA BANG JAGO🙂
+Join Our [GROUP](https://t.me/etherealreborn) UNTUK MEREPORT PARA JAMET AMA BANG JAGO🙂
 
 Tambahin gua ke grup elu dan kasih akses admin!
 SIAP MEMBASMI JAMET ☠️:
@@ -75,13 +76,14 @@ SIAP MEMBASMI JAMET ☠️:
 
 *BIG THANKS TO MY MASTER :* [KOALA](https://t.me/manusiarakitann)
 *MANAGED BY:* [UPI](https://t.me/yangtagtolol)
-Wanna Add me to your Group? Just click the button below!
+*MAINTENED BY:* [KEPO MEMEK](https://t.me/yangtagtolol)
+Mau masukin gua ke grup? Tinggal klik tombol dibawah jing!
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="Add to Group 👥", url="t.me/etherealmanagebot?startgroup=true"
+            text="Tambahin Gua ke Grup 👥", url="t.me/etherealmanagebot?startgroup=true"
         ),
         InlineKeyboardButton(
             text="Gban Logs 🚫", url="https://t.me/dregsboty"
@@ -97,7 +99,7 @@ buttons += [
             url=f"t.me/{dispatcher.bot.username}?start=help",
         ),
         InlineKeyboardButton(
-            text="GROUP ASIK", url="https://t.me/gcsampah"
+            text="GROUP UPI", url="https://t.me/gcsampah"
         ),
     ]
 ]
@@ -120,11 +122,11 @@ HEI PEPEK! Nama gua *{dispatcher.bot.first_name}*.
 GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO.
 
 *Main* commands available:
- × /start: Starts me, can be used to check i'm alive or no...
- × /help: PM's you this message.
- × /help <module name>: PM's you info about that module.
- × /settings: in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
+ × /start: akflgjshskfkd sjdkskdjskfj.....
+ × /help: hesemenehsjdlslfhskcldkdl ddjdkdkd.
+ × /help <module name>: qpekfnckslsj dhdksk fhdkskskxnskd.
+ × /settings: in PM: qlfn kfkdkcj fjdkchskllj fjdkdkcjfleplgj fnfkdl.
+   - in a group: p.
  \nClick on the buttons below to get documentation about specific modules!"""
 
 
