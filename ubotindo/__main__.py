@@ -70,9 +70,8 @@ GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO. use /help
 Join Our [GROUP](https://t.me/etherealreborn) UNTUK MEREPORT PARA JAMET AMA BANG JAGO🙂
 
 Tambahin gua ke grup elu dan kasih akses admin!
-SIAP MEMBASMI JAMET ☠️:
+SIAP MEMBASMI JAMET DAN BANG JAGO ☠️:
 ━─━─━─━─━─━─━─━─━─━─━
-*THANKS TO    :* [UserBotIndoGroup](https://t.me/userbotindo)
 *MANAGED BY   :* [UPI](https://t.me/yangtagtolol)
 *MAINTENED BY :* [KEPO MEMEK](https://t.me/yangtagtolol)
 ━─━─━─━─━─━─━─━─━─━─━
