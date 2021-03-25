@@ -71,12 +71,12 @@ Join Our [GROUP](https://t.me/etherealreborn) UNTUK MEREPORT PARA JAMET AMA BANG
 
 Tambahin gua ke grup elu dan kasih akses admin!
 SIAP MEMBASMI JAMET ☠️:
-
-• follow my instagram.         • @lutfifirmansyahh
-
-*BIG THANKS TO MY MASTER :* [KOALA](https://t.me/manusiarakitann)
-*MANAGED BY:* [UPI](https://t.me/yangtagtolol)
-*MAINTENED BY:* [KEPO MEMEK](https://t.me/yangtagtolol)
+━─━─━─━─━─━─━─━─━─━─━
+*THANKS TO MY PARTNERS :* [KOALA](https://t.me/manusiarakitann)
+*THANKS TO    :* [UserBotIndoGroup](https://t.me/userbotindo)
+*MANAGED BY   :* [UPI](https://t.me/yangtagtolol)
+*MAINTENED BY :* [KEPO MEMEK](https://t.me/yangtagtolol)
+━─━─━─━─━─━─━─━─━─━─━
 Mau masukin gua ke grup? Tinggal klik tombol dibawah jing!
 """
 
@@ -130,35 +130,35 @@ GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO.
  \nUvuvwevwevweve ugwemugwem ossas!"""
 
 
-STAFF_HELP_STRINGS = """Hey there staff users. Nice to see you :)
-Here is all the staff's commands. Users above has the command access for all commands below.
-
+STAFF_HELP_STRINGS = """TRANSLATED from en to id
+Hai pepek, para pengguna staf. Senang bertemu Anda kontol :)
+Ini semua perintah staf. Pengguna di atas memiliki akses perintah untuk semua perintah di bawah ini.
 *OWNER*
-× /broadcast: Send a broadcast message to all chat that i'm currently in.
-× /staffids: Get all staff's you have.
-× /ip: Sends the bot's IP address to ssh in if necessary (PM only).
+× /broadcast: menyem menyem.
+× /staffids: ashadu.
+× /ip: sholatullah salamuallah (PM only).
 
 *DEV USERS*
-× /gitpull: Pull latest update.
-× /reboot: Restart the bot.
-× /dbcleanup: Clean my invalid database.
-× /leavemutedchats: Leave all chats where i can't send message.
-× /leave <chatid>: Tell me to leave the given group. (alias /leavechat /leavegroup).
-× /stats: List of all blacklists, filters, federations, gbans, etc from all group.
-× /getlink <chatid>: Get chat invite link.
-× /sysinfo: Get my system info.
+× /gitpull: subhanallah.
+× /reboot: heem.
+× /dbcleanup: yh gt pkny.
+× /leavemutedchats: ya.
+× /leave <chatid>: heem mf g dl. (alias /leavechat /leavegroup).
+× /stats: iya, gtw, heem, itu, etc ckptw.
+× /getlink <chatid>: Get ingfho.
+× /sysinfo: Getuk.
 
 *SUDO USERS*
-× /snipe <chatid> <string>: Tell me to send a message to the given chat.
-× /echo <string>: Like snipe but on the current chat.
-× /chatlist: Get the list of chat that i'm currently in.
-× /ping: Start a ping test.
-× /speedtest: Start a speedtest from my server.
+× /snipe <chatid> <string>: cet.
+× /echo <string>: iya.
+× /chatlist: hencet berem.
+× /ping: xoba ajha.
+× /speedtest: choba.
 
 *SUPPORT USERS*
-× /gban <userid>: global ban a user.
-× /ungban <userid>: remove currently gbanned user.
-× /gbanlist: Get the list of currently gbanned users."""
+× /gban <userid>: globaltipi.
+× /ungban <userid>: oya.
+× /gbanlist: :v ."""
 
 
 IMPORTED = {}
