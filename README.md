@@ -1,4 +1,4 @@
-# BRAXAS BOT BASE USERBOTINDO
+# ABRAXAS BOT BASE USERBOTINDO
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/UserBotIndo/)
 
@@ -13,7 +13,7 @@ A modular telegram Python bot running on python3 with sqlalchemy database.
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and
 simple to use. Note that this project uses a well-known Telegram-bot of its time @BanhammerMarie_bot from Paul Larson as its base.
 
-Can be found on telegram as [ABRAXAS](https://t.me/etherealmanagebot).
+Can be found on telegram as [ABRAXAS](https://t.me/abraxasrobot).
 
 Join the [Group Support](https://t.me/etherealreborn) if you just want to stay in the loop about new features or announcements.
 
