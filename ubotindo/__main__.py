@@ -83,7 +83,7 @@ Mau masukin gua ke grup? Tinggal klik tombol dibawah jing!
 buttons = [
     [
         InlineKeyboardButton(
-            text="Tambahin Gua ke Grup 👥", url="t.me/etherealmanagebot?startgroup=true"
+            text="Tambahin Gua ke Grup 👥", url="t.me/abraxasrobot?startgroup=true"
         ),
         InlineKeyboardButton(
             text="Gban Logs 🚫", url="https://t.me/dregsboty"
@@ -95,7 +95,7 @@ buttons = [
 buttons += [
     [
         InlineKeyboardButton(
-            text="Help & Commands ❔",
+            text="Perintah & Bantuan ❔",
             url=f"t.me/{dispatcher.bot.username}?start=help",
         ),
         InlineKeyboardButton(
@@ -127,7 +127,7 @@ GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO.
  × /help <module name>: qpekfnckslsj dhdksk fhdkskskxnskd.
  × /settings: in PM: qlfn kfkdkcj fjdkchskllj fjdkdkcjfleplgj fnfkdl.
    - in a group: p.
- \nClick on the buttons below to get documentation about specific modules!"""
+ \nUvuvwevwevweve ugwemugwem ossas!"""
 
 
 STAFF_HELP_STRINGS = """Hey there staff users. Nice to see you :)
