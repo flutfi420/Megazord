@@ -66,14 +66,12 @@ PM_START_TEXT = f"""
 Hey PEPEK! Nama gua *{dispatcher.bot.first_name}*.
 GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO. use /help
 
-Join Our [GROUP](https://t.me/gcsampah) UNTUK REPORT JAMET AMA BANG JAGO🙂
+Join Our [GROUP](https://t.me/etherealreborn) UNTUK MEREPORT JAMET AMA BANG JAGO🙂
 
 Tambahin gua ke grup elu dan kasih akses admin!
 SIAP MEMBASMI JAMET ☠️:
 
 • follow my instagram.         • @lutfifirmansyahh
-• follow instagram master.         • @manusiarakitann
-• Media Partners.   • CARI TEMAN HIDUP
 
 *BIG THANKS TO MY MASTER :* [KOALA](https://t.me/manusiarakitann)
 *MANAGED BY:* [UPI](https://t.me/yangtagtolol)
@@ -83,7 +81,7 @@ Wanna Add me to your Group? Just click the button below!
 buttons = [
     [
         InlineKeyboardButton(
-            text="Add to Group 👥", url="t.me/userbotindobot?startgroup=true"
+            text="Add to Group 👥", url="t.me/etherealmanagebot?startgroup=true"
         ),
         InlineKeyboardButton(
             text="Gban Logs 🚫", url="https://t.me/dregsboty"
@@ -99,9 +97,6 @@ buttons += [
             url=f"t.me/{dispatcher.bot.username}?start=help",
         ),
         InlineKeyboardButton(
-            text="Support Group MASTER 🐨", url="https://t.me/caritemanhidop"
-        ),
-        InlineKeyboardButton(
             text="GROUP ASIK", url="https://t.me/gcsampah"
         ),
     ]
@@ -110,7 +105,7 @@ buttons += [
 buttons += [
     [
         InlineKeyboardButton(
-            text="MY INSTAGRAM 🌐",
+            text="FOLLOW MY INSTAGRAM 🌐",
             url="https://www.instagram.com/lutfifirmansyahh/"
         ),
         InlineKeyboardButton(
@@ -121,9 +116,8 @@ buttons += [
 
 
 HELP_STRINGS = f"""
-Hello there! My name is *{dispatcher.bot.first_name}*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
-the things I can help you with.
+HEI PEPEK! Nama gua *{dispatcher.bot.first_name}*.
+GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO.
 
 *Main* commands available:
  × /start: Starts me, can be used to check i'm alive or no...
