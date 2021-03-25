@@ -72,7 +72,6 @@ Join Our [GROUP](https://t.me/etherealreborn) UNTUK MEREPORT PARA JAMET AMA BANG
 Tambahin gua ke grup elu dan kasih akses admin!
 SIAP MEMBASMI JAMET ☠️:
 ━─━─━─━─━─━─━─━─━─━─━
-*THANKS TO MY PARTNERS :* [KOALA](https://t.me/manusiarakitann)
 *THANKS TO    :* [UserBotIndoGroup](https://t.me/userbotindo)
 *MANAGED BY   :* [UPI](https://t.me/yangtagtolol)
 *MAINTENED BY :* [KEPO MEMEK](https://t.me/yangtagtolol)
