@@ -1,6 +1,4 @@
-# DREGSBOT X MEGAZORDBOT BOT BASE USERBOTINDO
-THANKS FOR USERBOTINDO
-
+# BRAXAS BOT BASE USERBOTINDO
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/UserBotIndo/)
 
