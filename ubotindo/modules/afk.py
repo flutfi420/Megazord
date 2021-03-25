@@ -89,7 +89,7 @@ def no_longer_afk(update, context):
                 "{} kembali siap memberantas sange online!",
                 "{} gausa balik lagi gapenting!",
                 "hmm balik paling abis nyari pap tt! {}",
-                "Where is {}?\nIn the chat!",
+                "Dimana si bngst {}?\nIni disini !",
             ]
             chosen_option = random.choice(options)
             unafk = update.effective_message.reply_text(
@@ -171,7 +171,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "<b>{}</b> is away from keyboard! says it's because of <b>Reason:</b> <code>{}</code>".format(
+            res = "<b>{}</b> Si bangsat afk! karena <b>Alesan:</b> <code>{}</code>".format(
                 fst_name, user["reason"])
             replafk = update.effective_message.reply_text(
                 res, parse_mode="html"
