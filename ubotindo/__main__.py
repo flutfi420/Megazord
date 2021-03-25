@@ -99,7 +99,7 @@ buttons += [
             url=f"t.me/{dispatcher.bot.username}?start=help",
         ),
         InlineKeyboardButton(
-            text="GROUP UPI", url="https://t.me/gcsampah"
+            text="GROUP UPI", url="https://t.me/etherealreborn"
         ),
     ]
 ]
@@ -107,11 +107,11 @@ buttons += [
 buttons += [
     [
         InlineKeyboardButton(
-            text="FOLLOW MY INSTAGRAM 🌐",
+            text="INSTAGRAM",
             url="https://www.instagram.com/lutfifirmansyahh/"
         ),
         InlineKeyboardButton(
-            text="GROUPS PARTNERS", url="https://t.me/pemudapemuditersesatt"
+            text="Req Bot", url="https://t.me/yangtagtolol"
         ),
     ]
 ]
@@ -122,7 +122,7 @@ HEI PEPEK! Nama gua *{dispatcher.bot.first_name}*.
 GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO.
 
 *Main* commands available:
- × /start: akflgjshskfkd sjdkskdjskfj.....
+ × /start: hesemeneh.....
  × /help: hesemenehsjdlslfhskcldkdl ddjdkdkd.
  × /help <module name>: qpekfnckslsj dhdksk fhdkskskxnskd.
  × /settings: in PM: qlfn kfkdkcj fjdkchskllj fjdkdkcjfleplgj fnfkdl.
