@@ -94,9 +94,6 @@ def no_longer_afk(update, context):
             chosen_option = random.choice(options)
             unafk = update.effective_message.reply_text(
                 chosen_option.format(firstname)
-            )
-            sleep(10)
-            unafk.delete()
         except BaseException:
             return
 
@@ -175,10 +172,6 @@ def check_afk(update, context, user_id, fst_name, userc_id):
                 fst_name, user["reason"])
             replafk = update.effective_message.reply_text(
                 res, parse_mode="html"
-            )
-        sleep(10)
-        try:
-            replafk.delete()
         except BadRequest:
             return
 
