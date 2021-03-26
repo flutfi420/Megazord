@@ -64,16 +64,14 @@ from ubotindo.modules.helper_funcs.alternate import typing_action
 
 PM_START_TEXT = f"""
 Hey PEPEK! Nama gua *{dispatcher.bot.first_name}*.
-GUA MANUSIA ROBOT YANG DIBUAT OLEH [UPI](https://t.me/yangtagtolol)
+GUA MANUSIA ROBOT YANG DIBUAT OLEH [MASTER](https://t.me/yangtagtolol).
 GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO. use /help
 
 Join Our [GROUP](https://t.me/etherealreborn) UNTUK MEREPORT PARA JAMET AMA BANG JAGO🙂
-
 Tambahin gua ke grup elu dan kasih akses admin!
 SIAP MEMBASMI JAMET DAN BANG JAGO ☠️:
 ━─━─━─━─━─━─━─━─━─━─━
-*MANAGED BY   :* [UPI](https://t.me/yangtagtolol)
-*MAINTENED BY :* [KEPO MEMEK](https://t.me/yangtagtolol)
+*MANAGED BY 😚 :* [UPI](https://t.me/yangtagtolol)
 ━─━─━─━─━─━─━─━─━─━─━
 Mau masukin gua ke grup? Tinggal klik tombol dibawah jing!
 """
@@ -97,7 +95,7 @@ buttons += [
             url=f"t.me/{dispatcher.bot.username}?start=help",
         ),
         InlineKeyboardButton(
-            text="GROUP UPI", url="https://t.me/etherealreborn"
+            text="GROUP ASEK 👽", url="https://t.me/etherealreborn"
         ),
     ]
 ]
@@ -105,11 +103,11 @@ buttons += [
 buttons += [
     [
         InlineKeyboardButton(
-            text="INSTAGRAM",
+            text="INSTAGRAM🤖",
             url="https://www.instagram.com/lutfifirmansyahh/"
         ),
         InlineKeyboardButton(
-            text="Req Bot", url="https://t.me/yangtagtolol"
+            text="OWNER GANTENK💕", url="https://t.me/yangtagtolol"
         ),
     ]
 ]
