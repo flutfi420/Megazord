@@ -34,16 +34,15 @@ AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
 
-"""This Function to triger bot"""
-
-
-def afk(update, context):
+@run_async
+def afk(update: Update, context: CallbackContext):
     args = update.effective_message.text.split(None, 1)
+    user = update.effective_user
 
-    if not update.effective_user.id:
+    if not user:  # ignore channels
         return
 
-    if update.effective_user.id in (777000, 1087968824):
+    if user.id in [777000, 1087968824]:
         return
 
     notice = ""
@@ -55,51 +54,46 @@ def afk(update, context):
     else:
         reason = ""
 
-    afk_db.set_afk(update.effective_user.id, reason)
-    afkstr = random.choice(fun.AFK)
-    msg = update.effective_message
-    afksend = msg.reply_text(
-        afkstr.format(update.effective_user.first_name, notice)
-    )
-    sleep(5)
+    sql.set_afk(update.effective_user.id, reason)
+    fname = update.effective_user.first_name
     try:
-        afksend.delete()
+        update.effective_message.reply_text("Si {} bangsat AFK!{}".format(fname, notice))
     except BadRequest:
-        return
+        pass
 
-"""This function to check user afk or not""" 
-def no_longer_afk(update, context):
+
+@run_async
+def no_longer_afk(update: Update, context: CallbackContext):
     user = update.effective_user
     message = update.effective_message
 
     if not user:  # ignore channels
         return
 
-    res = afk_db.rm_afk(user.id)
+    res = sql.rm_afk(user.id)
     if res:
         if message.new_chat_members:  # dont say msg
             return
         firstname = update.effective_user.first_name
         try:
             options = [
-                "{} dih bangsat balik lagi!",
-                "{} hai kampang welback!",
-                "{} pengangguran sok sibuk balik!",
-                "{} wb anak anjeeng!",
-                "{} kembali siap memberantas sange online!",
-                "{} gausa balik lagi gapenting!",
-                "hmm balik paling abis nyari pap tt! {}",
-                "Dimana si bngst {}?\nIni disini !",
+                "HEI PEPEK *{}* WELKAMBEK!",
+                "Si {} abis nyari pap tt.",
+                "WELBEK *{}* ANAK BABI!",
+                "SI {} PENGANGGURAN WELBEK!",
+                "NGAPAIN {} ONLINE?!",
+                "AWAS SI {} ANAK BABI MO LEWAT!",
+                "{} DATANG UNTUK MEMBERANTAS JAMETERS!",
+                "{} DATANG UNTUK MEMBERANTAS USER TELE KONTOL!",
             ]
             chosen_option = random.choice(options)
-            unafk = update.effective_message.reply_text(
-                chosen_option.format(firstname)
-        except BaseException:
+            update.effective_message.reply_text(chosen_option.format(firstname))
+        except:
             return
 
 
-"""This method to tell if user afk"""
-def reply_afk(update, context):
+@run_async
+def reply_afk(update: Update, context: CallbackContext):
     bot = context.bot
     message = update.effective_message
     userc = update.effective_user
@@ -108,7 +102,8 @@ def reply_afk(update, context):
         [MessageEntity.TEXT_MENTION, MessageEntity.MENTION]
     ):
         entities = message.parse_entities(
-            [MessageEntity.TEXT_MENTION, MessageEntity.MENTION])
+            [MessageEntity.TEXT_MENTION, MessageEntity.MENTION]
+        )
 
         chk_users = []
         for ent in entities:
@@ -120,32 +115,24 @@ def reply_afk(update, context):
                     return
                 chk_users.append(user_id)
 
-            if ent.type == MessageEntity.MENTION:
-                user_id = get_user_id(
-                    message.text[ent.offset: ent.offset + ent.length]
-                )
-                if not user_id:
-                    # Should never happen, since for a user to become AFK they
-                    # must have spoken. Maybe changed username?
-                    return
-
-                if user_id in chk_users:
-                    return
-                chk_users.append(user_id)
-
-                try:
-                    chat = bot.get_chat(user_id)
-                except BadRequest:
-                    print(
-                        "Error: Could not fetch userid {} for AFK module".format(
-                            user_id
-                        )
-                    )
-                    return
-                fst_name = chat.first_name
-
-            else:
+            if ent.type != MessageEntity.MENTION:
                 return
+
+            user_id = get_user_id(message.text[ent.offset : ent.offset + ent.length])
+            if not user_id:
+                # Should never happen, since for a user to become AFK they must have spoken. Maybe changed username?
+                return
+
+            if user_id in chk_users:
+                return
+            chk_users.append(user_id)
+
+            try:
+                chat = bot.get_chat(user_id)
+            except BadRequest:
+                print("Error: Could not fetch userid {} for AFK module".format(user_id))
+                return
+            fst_name = chat.first_name
 
             check_afk(update, context, user_id, fst_name, userc_id)
 
@@ -156,57 +143,37 @@ def reply_afk(update, context):
 
 
 def check_afk(update, context, user_id, fst_name, userc_id):
-    if afk_db.is_afk(user_id):
-        user = afk_db.check_afk_status(user_id)
-        if user is None:
-            return  # sanity check
-        if not user["reason"]:
-            if int(userc_id) == int(user_id):
-                return
-            res = "{} is afk".format(fst_name)
-            replafk = update.effective_message.reply_text(res)
-        else:
-            if int(userc_id) == int(user_id):
-                return
-            res = "<b>{}</b> Si bangsat afk! karena <b>Alesan:</b> <code>{}</code>".format(
-                fst_name, user["reason"])
-            replafk = update.effective_message.reply_text(
-                res, parse_mode="html"
-        except BadRequest:
+    if sql.is_afk(user_id):
+        user = sql.check_afk_status(user_id)
+        if int(userc_id) == int(user_id):
             return
-
-
-def __gdpr__(user_id):
-    afk_db.rm_afk(user_id)
+        if not user.reason:
+            res = "{} is afk".format(fst_name)
+            update.effective_message.reply_text(res)
+        else:
+            res = "{} is afk.\nReason: <code>{}</code>".format(
+                html.escape(fst_name), html.escape(user.reason)
+            )
+            update.effective_message.reply_text(res, parse_mode="html")
 
 
 __help__ = """
+ • `/afk <reason>`*:* mark yourself as AFK(away from keyboard).
+ • `brb <reason>`*:* same as the afk command - but not a command.
 When marked as AFK, any mentions will be replied to with a message to say you're not available!
-
- × /afk <reason>: Mark yourself as AFK.
- × brb <reason>: Same as the afk command - but not a command.
 """
 
-
-AFK_HANDLER = DisableAbleCommandHandler("afk", afk, run_async=True)
+AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
 AFK_REGEX_HANDLER = DisableAbleMessageHandler(
-    Filters.regex("(?i)brb"), afk, friendly="afk", run_async=True
+    Filters.regex(r"^(?i)brb(.*)$"), afk, friendly="afk"
 )
-NO_AFK_HANDLER = MessageHandler(
-    Filters.all, no_longer_afk, run_async=True
-)
-AFK_REPLY_HANDLER = MessageHandler(
-    Filters.all & Filters.chat_type.groups & ~Filters.update.edited_message,
-    reply_afk,
-    run_async=True,
-)
-
+NO_AFK_HANDLER = MessageHandler(Filters.all & Filters.group, no_longer_afk)
+AFK_REPLY_HANDLER = MessageHandler(Filters.all & Filters.group, reply_afk)
 
 dispatcher.add_handler(AFK_HANDLER, AFK_GROUP)
 dispatcher.add_handler(AFK_REGEX_HANDLER, AFK_GROUP)
 dispatcher.add_handler(NO_AFK_HANDLER, AFK_GROUP)
 dispatcher.add_handler(AFK_REPLY_HANDLER, AFK_REPLY_GROUP)
-
 
 __mod_name__ = "AFK"
 __command_list__ = ["afk"]
