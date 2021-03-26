@@ -61,7 +61,7 @@ def afk(update, context):
     afksend = msg.reply_text(
         afkstr.format(update.effective_user.first_name, notice)
     )
-    sleep(900)
+    sleep(60)
     try:
         afksend.delete()
     except BadRequest:
@@ -82,8 +82,8 @@ def no_longer_afk(update, context):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "dih si *{}* bangsat balik lagi!",
-                "hai *{}* pepek welback!",
+                "dih si {} bangsat balik lagi!",
+                "hai {} pepek welback!",
                 "si {} pengangguran sok sibuk balik!",
                 "wb {} anak anjeeng!",
                 "{} kembali siap memberantas sange online!",
@@ -176,7 +176,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
             replafk = update.effective_message.reply_text(
                 res, parse_mode="html"
             )
-        sleep(900)
+        sleep(60)
         try:
             replafk.delete()
         except BadRequest:
