@@ -63,26 +63,24 @@ from ubotindo.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = f"""
-Hey PEPEK! Nama gua *{dispatcher.bot.first_name}*.
-GUA MANUSIA ROBOT YANG DIBUAT OLEH [MASTER](https://t.me/yangtagtolol).
-GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO. use /help
+Hai! Nama saya *{dispatcher.bot.first_name}*.
+Saya adalah robot super yang dirancang oleh [MASTER](https://t.me/yangtagtolol).
+Untuk menjaga grup supaya aman dan terkendali. use /help
 
-Join Our [GROUP](https://t.me/etherealreborn) UNTUK MEREPORT PARA JAMET AMA BANG JAGO🙂
-Tambahin gua ke grup elu dan kasih akses admin!
-SIAP MEMBASMI JAMET DAN BANG JAGO ☠️:
+Join [GROUP RANDOM PEOPLE](https://t.me/etherealreborn) grup asik!
 ━─━─━─━─━─━─━─━─━─━─━
-*MANAGED BY 😚 :* [UPI](https://t.me/yangtagtolol)
+*BOT MANAGED BY 😚 :* [LUTFI](https://t.me/yangtagtolol)
 ━─━─━─━─━─━─━─━─━─━─━
-Mau masukin gua ke grup? Tinggal klik tombol dibawah jing!
+Mau masukin saya ke grup? Tinggal klik tombol dibawah!
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="Tambahin Gua ke Grup 👥", url="t.me/abraxasrobot?startgroup=true"
+            text="Tambahin Saya ke Grup 👥", url="t.me/abraxasrobot?startgroup=true"
         ),
         InlineKeyboardButton(
-            text="Gban Logs 🚫", url="https://t.me/dregsboty"
+            text="JANGAN DI KLIK 🚫", url="https://www.instagram.com/lutfifirmansyahh"
         ),
     ]
 ]
@@ -114,11 +112,11 @@ buttons += [
 
 
 HELP_STRINGS = f"""
-HEI PEPEK! Nama gua *{dispatcher.bot.first_name}*.
-GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO.
+HAI! Nama saya *{dispatcher.bot.first_name}*.
+SAYA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET.
 
 *Main* commands available:
- × /start: hesemeneh.....
+ × /start: Mulai bot.
  × /help: hesemenehsjdlslfhskcldkdl ddjdkdkd.
  × /help <module name>: qpekfnckslsj dhdksk fhdkskskxnskd.
  × /settings: in PM: qlfn kfkdkcj fjdkchskllj fjdkdkcjfleplgj fnfkdl.
@@ -127,7 +125,7 @@ GUA HADIR UNTUK MELINDUNGI GRUP DARI PARA JAMET DAN BANG JAGO.
 
 
 STAFF_HELP_STRINGS = """TRANSLATED from en to id
-Hai pepek, para pengguna staf. Senang bertemu Anda kontol :)
+Hai, para pengguna staf. Senang bertemu Anda :)
 Ini semua perintah staf. Pengguna di atas memiliki akses perintah untuk semua perintah di bawah ini.
 *OWNER*
 × /broadcast: menyem menyem.
